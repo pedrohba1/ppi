@@ -3,7 +3,9 @@ package com.example.demo.service;
 import com.example.demo.model.User;
 import com.example.demo.repository.UserRepository;
 import extension.UserException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -12,10 +14,14 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
+@RequiredArgsConstructor
 public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+
+    private final BCryptPasswordEncoder passwordEncoder;
 
     @Transactional
     public User save(User user){
@@ -24,6 +30,7 @@ public class UserService {
         if(foundEmail || foundUsername ) {
             throw new UserException("Já existe um usuário com este nome");
         }
+        user.setPassword(passwordEncoder.encode((user.getPassword())));
         return userRepository.save(user);
     }
 
