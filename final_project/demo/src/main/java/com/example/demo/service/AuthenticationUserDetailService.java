@@ -2,15 +2,13 @@ package com.example.demo.service;
 
 
 import com.example.demo.model.User;
-import com.example.demo.model.UserPrincipal;
+import com.example.demo.model.UserDetailsImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import java.util.Collections;
 
 @Service
 @RequiredArgsConstructor
@@ -27,6 +25,6 @@ public class AuthenticationUserDetailService implements UserDetailsService {
         }
 
         log.info("user logged. {}, password: {}", user.getUsername(), user.getPassword());
-        return new UserPrincipal(user);
+        return UserDetailsImpl.build(user);
     }
 }
