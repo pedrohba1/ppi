@@ -1,8 +1,8 @@
 package com.example.demo.filter;
 
 import com.auth0.jwt.algorithms.Algorithm;
-import com.example.demo.model.User;
 import com.auth0.jwt.JWT;
+import com.example.demo.model.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import constants.AuthConfigConstants;
 import lombok.RequiredArgsConstructor;

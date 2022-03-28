@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
@@ -39,7 +40,8 @@ public class UserService {
     }
 
     public User findByUsername(String username){
-        return userRepository.findByUsername(username);
+        User user = new User();
+        return userRepository.findByUsername(username).orElseThrow(EntityNotFoundException::new);
     }
 
     public boolean findByEmail(String email){
