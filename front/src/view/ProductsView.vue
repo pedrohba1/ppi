@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "ProductsView"
+  name: 'ProductsView'
 }
 </script>
 
@@ -190,6 +190,5 @@ html,body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 
 </style>
