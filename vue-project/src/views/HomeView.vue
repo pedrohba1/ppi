@@ -73,27 +73,29 @@
   </router-link>
 </template>
 <script>
+import { mapActions } from "vuex";
+
 export default {
   data() {
     return {
       parentMessage: "Parent",
-      products: [
-        {
-          id: "fds",
-          name: "tal",
-          price: "tal",
-          image:
-            "https://multimedia.bbycastatic.ca/multimedia/products/250x250/157/15736/15736356.jpg",
-        },
-        { id: "fds", name: "tal", price: "tal", image: "tal" },
-        { id: "fds", name: "tal", price: "tal", image: "tal" },
-        { id: "fds", name: "tal", price: "tal", image: "tal" },
-        { id: "fds", name: "tal", price: "tal", image: "tal" },
-        { id: "fds", name: "tal", price: "tal", image: "tal" },
-        { id: "fds", name: "tal", price: "tal", image: "tal" },
-        { id: "fds", name: "tal", price: "tal", image: "tal" },
-      ],
+      products: [],
     };
+  },
+  methods: {
+    ...mapActions("products", {
+      getProducts: "getProducts",
+    }),
+    async fetch() {
+      const data = await this.getProducts();
+      console.log(data);
+      this.products = data;
+    },
+  },
+  beforeMount() {
+    this.fetch();
+
+    console.log("aqui");
   },
 };
 </script>
