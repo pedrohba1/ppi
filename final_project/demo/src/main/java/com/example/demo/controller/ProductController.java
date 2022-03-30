@@ -40,8 +40,7 @@ public class ProductController {
         if(optionalUser.isEmpty()){
             throw new UserException("user does not exist");
         }
-        product.setUser(optionalUser.get());
-
+        product.setCreator(optionalUser.get());
         return ResponseEntity.status(HttpStatus.CREATED).body(productService.save(product));
     }
 

@@ -1,10 +1,10 @@
 package extension;
 
 
-public class UserException extends RuntimeException {
+public class ProductException extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
-    public UserException(String message) {
+    public ProductException(String message) {
         super(message);
     }
 

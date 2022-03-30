@@ -14,7 +14,6 @@ import java.util.Collections;
 @CrossOrigin
 @Configuration
 public class RestConfiguration {
-    // Fix the CORS errors
     @Bean
     public FilterRegistrationBean simpleCorsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

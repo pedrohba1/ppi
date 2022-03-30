@@ -35,6 +35,11 @@ public class User {
     @Column(name = "phoneNum", unique = true)
     private String phoneNum;
 
+    @Column(name = "walletAddress", unique = true)
+    private String walletAddress;
+
+
+
 //    @Column(name = "product_list", unique = true)
 //    private UUID[] products;
 

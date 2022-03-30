@@ -15,28 +15,38 @@ import java.util.UUID;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "productId")
-    private UUID productId;
+    @Column(name = "id")
+    private UUID id;
 
-    @Column(name = "productName", nullable = false)
-    private String productName;
+    @Column(name = "name", nullable = false)
+    private String name;
 
-    @Column(name = "productDescription")
-    private String productDescription;
+    @Column(name = "description")
+    private String description;
 
-    @Column(name = "productType")
-    private String productType;
+    @Column(name = "type")
+    private String type;
 
-    @Column(name = "productImage")
-    private String productImage;
+    @Column(name = "image")
+    private String image;
 
-    @Column(name = "productPrice")
-    private long productPrice;
+    @Column(name = "price")
+    private long price;
 
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "creator_id")
+    private User creator;
+
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "buyer_id")
+    private User buyer;
+
+
+    @Column(name = "txnHash")
+    private String txnHash;
 
 
 }
+
