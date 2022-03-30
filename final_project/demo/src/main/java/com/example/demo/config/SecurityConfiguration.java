@@ -39,7 +39,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .cors().and().authorizeRequests()
-                .antMatchers(HttpMethod.POST, AuthConfigConstants.SIGN_UP_URL).permitAll()
+                .antMatchers(HttpMethod.POST, AuthConfigConstants.SIGN_UP_URL)
+                .permitAll()
+                .antMatchers(HttpMethod.GET, "/product/**")
+                .permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilter(new JwtAuthenticationFilter(authenticationManager()))
