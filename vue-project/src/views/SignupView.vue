@@ -45,13 +45,24 @@
             <span class="icons"><img src="../static/o-email.png" /></span>
           </div>
 
+          <div class="wrap-input100">
+            <span class="label-input100">Endereço de carteira</span>
+            <input
+              class="input100 has-val"
+              name="wallet"
+              id="txtWallet"
+              v-model="walletAddress"
+              placeholder="Endereço de carteira"
+            />
+          </div>
+
           <span class="erro_span" id="erro_span"></span>
           <div class="text-right">
-            <a href="./login.html"> Já possui uma conta? Entre agora </a>
+            <a href="/login"> Já possui uma conta? Entre agora </a>
           </div>
           <div class="container-login100-form-btn">
             <div class="wrap-login100-form-btn">
-              <button class="btn" type="button" onclick="validate_cadastro()">
+              <button class="btn" type="button" @click="signup()">
                 Cadastrar
               </button>
             </div>
@@ -62,7 +73,44 @@
   </div>
 </template>
 
-<script></script>
+<script>
+import { mapActions, mapGetters } from "vuex";
+
+export default {
+  data() {
+    return {
+      username: "",
+      password: "",
+      email: "",
+      walletAddress: "",
+    };
+  },
+  computed: {
+    ...mapGetters("signup", {
+      getSignUpStatus: "getSignUpStatus",
+    }),
+  },
+  methods: {
+    ...mapActions("signup", {
+      actionSignUpApi: "signupApi",
+    }),
+    async signup() {
+      const payload = {
+        username: this.username,
+        password: this.password,
+        email: this.email,
+        walletAddress: this.walletAddress,
+      };
+
+      await this.actionSignUpApi(payload);
+      if (this.getSignUpStatus === "") return;
+      if (this.getSignUpStatus === "failed") return;
+      this.$router.push("/login");
+    },
+  },
+  name: "LoginView",
+};
+</script>
 
 <style>
 /*Formatações gerais*/

@@ -90,7 +90,6 @@ export default {
       };
 
       await this.actionLoginApi(payload);
-
       if (this.getLoginApiStatus === "") return;
       if (this.getLoginApiStatus === "failed") return;
       this.$router.push("/");
