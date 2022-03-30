@@ -47,8 +47,8 @@
         <input
           type="text"
           id="txtProductName"
-          name="productName"
-          v-model="productName"
+          name="name"
+          v-model="name"
           placeholder="Nome"
         />
       </div>
@@ -58,8 +58,8 @@
         <input
           type="text"
           id="txtProductType"
-          v-model="productType"
-          name="productType"
+          v-model="type"
+          name="type"
           placeholder="Tipo do produto"
         />
       </div>
@@ -69,8 +69,8 @@
         <input
           type="text"
           id="txtProductImage"
-          v-model="productImage"
-          name="productImage"
+          v-model="image"
+          name="image"
           placeholder="URL da imagem do produto"
         />
       </div>
@@ -85,8 +85,8 @@
         <input
           type="text"
           id="txtProductDesc"
-          name="productDesc"
-          v-model="productDesc"
+          name="description"
+          v-model="description"
           placeholder="Descrição"
         />
       </div>
@@ -94,7 +94,7 @@
         <span class="error_span"></span>
       </div>
 
-      <button type="button" class="addBtn" onclick="validate()" name="button">
+      <button type="button" class="addBtn" @click="create()" name="button">
         Anunciar
       </button>
     </form>
@@ -102,14 +102,32 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   data() {
     return {
-      productName: "",
-      productType: "",
-      productDesc: "",
-      productImage: "",
+      name: "",
+      type: "",
+      description: "",
+      image: "",
     };
+  },
+
+  methods: {
+    ...mapActions("products", {
+      createProduct: "createProduct",
+    }),
+    async create() {
+      const payload = {
+        name: this.name,
+        type: this.type,
+        description: this.description,
+        image: this.image,
+      };
+
+      await this.createProduct(payload);
+    },
   },
 };
 </script>

@@ -1,5 +1,10 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
+import localforage from "localforage";
+
+localforage.config({
+  name: "budgeterbium",
+});
 
 import App from "./App.vue";
 import router from "./router";
