@@ -64,6 +64,20 @@
   </router-link>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      parentMessage: "Parent",
+      products: [
+        { name: "tal", description: "tal", image: "tal" },
+        { name: "tal", description: "tal", image: "tal" },
+      ],
+    };
+  },
+};
+</script>
+
 <style>
 .test {
   width: 100%;
