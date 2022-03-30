@@ -1,9 +1,6 @@
 <template>
   <div class="all">
-    <div
-      class="container-login100"
-      style="background-image: url('../assets/bg-01.jpg')"
-    >
+    <div class="container-login100 backgroun-img">
       <div class="wrap-login100">
         <form
           class="login100-form validate-form"
@@ -21,7 +18,7 @@
               v-model="username"
               placeholder="Informe o usuário"
             />
-            <span class="icons"><img src="../assets/user.png" /></span>
+            <span class="icons"><img src="../static/user.png" /></span>
           </div>
           <div class="wrap-input100">
             <span class="label-input100">Senha</span>
@@ -33,7 +30,7 @@
               v-model="password"
               placeholder="Informe a senha"
             />
-            <span class="icons"><img src="./images/padlock.png" /></span>
+            <span class="icons"><img src="../static/padlock.png" /></span>
           </div>
           <div class="wrap-input100">
             <span class="label-input100">E-mail</span>
@@ -45,7 +42,7 @@
               v-model="email"
               placeholder="Informe seu e-mail"
             />
-            <span class="icons"><img src="./images/o-email.png" /></span>
+            <span class="icons"><img src="../static/o-email.png" /></span>
           </div>
 
           <span class="erro_span" id="erro_span"></span>
@@ -85,6 +82,10 @@ body {
   line-height: 1.5;
   color: #212529;
   background-color: #fff;
+}
+
+.backgroun-img {
+  background-image: url("../static/bg-01.jpg");
 }
 
 all {

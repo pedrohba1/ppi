@@ -43,18 +43,18 @@
           <div class="social-medias">
             <a href="#" class="login100-social-item bg1">
               <i class="fa fa-facebook"
-                ><img src="./images/facebook-app-symbol.png"
+                ><img src="../static/facebook-app-symbol.png"
               /></i>
             </a>
             <a href="#" class="login100-social-item bg2">
-              <i class="fa fa-twitter"><img src="./images/twitter.png" /></i>
+              <i class="fa fa-twitter"><img src="../static/twitter.png" /></i>
             </a>
             <a href="#" class="login100-social-item bg3">
-              <i class="fa fa-google"><img src="./images/google.png" /></i>
+              <i class="fa fa-google"><img src="../static/google.png" /></i>
             </a>
           </div>
           <div class="Cadastrar">
-            <a href="./cadastro.html" class="txt2"> Cadastre-se </a>
+            <a href="/cadastro" class="txt2"> Cadastre-se </a>
           </div>
         </form>
       </div>
