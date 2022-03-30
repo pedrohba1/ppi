@@ -13,7 +13,8 @@
               class="input100 has-val"
               type="text"
               name="username"
-              id="usuario"
+              id="txtUsername"
+              v-model="username"
               placeholder="Digite seu usuário"
             />
             <span class="icons"><img src="./images/user.png" /></span>
@@ -23,8 +24,9 @@
             <input
               class="input100"
               type="password"
-              name="pass"
-              id="pass"
+              name="password"
+              id="txtPassword"
+              v-model="password"
               placeholder="Digite sua senha"
             />
             <span class="icons"><img src="./images/padlock.png" /></span>
@@ -35,9 +37,7 @@
           </div>
           <div class="container-login100-form-btn">
             <div class="wrap-login100-form-btn">
-              <button class="btn" type="button" onclick="validate_login()">
-                LOGIN
-              </button>
+              <button class="btn" type="button" @click="login()">LOGIN</button>
             </div>
           </div>
           <div class="txt1 text-center">
@@ -64,6 +64,40 @@
     </div>
   </div>
 </template>
+
+<script>
+import { mapActions, mapGetters } from "vuex";
+
+export default {
+  data() {
+    return {
+      username: "",
+      password: "",
+    };
+  },
+  computed: {
+    ...mapGetters("auth", {
+      getLoginApiStatus: "getLoginApiStatus",
+    }),
+  },
+  methods: {
+    ...mapActions("auth", {
+      actionLoginApi: "loginApi",
+    }),
+    async login() {
+      console.log(this.username);
+      console.log(this.password);
+      const payload = {
+        username: this.username,
+        password: this.password,
+      };
+
+      await this.actionLoginApi(payload);
+    },
+  },
+  name: "LoginView",
+};
+</script>
 
 <style>
 /*Formatações gerais*/
