@@ -17,7 +17,8 @@
               class="input100 has-val"
               type="text"
               name="username"
-              id="usuario"
+              id="txtUsername"
+              v-model="username"
               placeholder="Informe o usuário"
             />
             <span class="icons"><img src="./images/user.png" /></span>
@@ -27,8 +28,9 @@
             <input
               class="input100"
               type="password"
-              name="pass"
-              id="pass"
+              name="password"
+              id="txtPassword"
+              v-model="password"
               placeholder="Informe a senha"
             />
             <span class="icons"><img src="./images/padlock.png" /></span>
@@ -38,24 +40,14 @@
             <input
               class="input100 has-val"
               type="email"
-              name="e-mail"
-              id="email"
+              name="email"
+              id="txtEmail"
+              v-model="email"
               placeholder="Informe seu e-mail"
             />
             <span class="icons"><img src="./images/o-email.png" /></span>
           </div>
-          <div class="wrap-input100">
-            <span class="label-input100">Telefone</span>
-            <input
-              class="input100 has-val"
-              type="text"
-              name="telefone"
-              id="telefone"
-              placeholder="Ex: (00)00000-0000"
-              maxlength="15"
-            />
-            <span class="icons"><img src="./images/telefone.png" /></span>
-          </div>
+
           <span class="erro_span" id="erro_span"></span>
           <div class="text-right">
             <a href="./login.html"> Já possui uma conta? Entre agora </a>
