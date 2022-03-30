@@ -1,9 +1,6 @@
 <template>
   <div class="all">
-    <div
-      class="container-login100"
-      style="background-image: url('./images/bg-01.jpg')"
-    >
+    <div class="container-login100 backgroun-img">
       <div class="wrap-login100">
         <form class="login100-form validate-form">
           <span class="login100-form-title"> Login </span>
@@ -17,7 +14,7 @@
               v-model="username"
               placeholder="Digite seu usuário"
             />
-            <span class="icons"><img src="./images/user.png" /></span>
+            <span class="icons"><img src="../static/user.png" /></span>
           </div>
           <div class="wrap-input100">
             <span class="label-input100">Senha</span>
@@ -29,7 +26,7 @@
               v-model="password"
               placeholder="Digite sua senha"
             />
-            <span class="icons"><img src="./images/padlock.png" /></span>
+            <span class="icons"><img src="../static/padlock.png" /></span>
           </div>
           <span class="erro_span" id="erro_span"></span>
           <div class="text-right">
@@ -126,6 +123,10 @@ body {
 all {
   width: 100%;
   margin: 0 auto;
+}
+
+.backgroun-img {
+  background-image: url("../static/bg-01.jpg");
 }
 
 div {

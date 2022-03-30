@@ -2,7 +2,7 @@
   <div class="all">
     <div
       class="container-login100"
-      style="background-image: url('./images/bg-01.jpg')"
+      style="background-image: url('../assets/bg-01.jpg')"
     >
       <div class="wrap-login100">
         <form
@@ -21,7 +21,7 @@
               v-model="username"
               placeholder="Informe o usuário"
             />
-            <span class="icons"><img src="./images/user.png" /></span>
+            <span class="icons"><img src="../assets/user.png" /></span>
           </div>
           <div class="wrap-input100">
             <span class="label-input100">Senha</span>

@@ -32,39 +32,6 @@
         </div>
       </div>
     </nav>
-    <nav class="subnavigation">
-      <ul class="submenu">
-        <a href="#" class="flex_grow"><li>Itens selecionados: 3</li></a>
-        <a href="#"><li>categoria 1</li></a>
-        <a href="#"><li>categoria 2</li></a>
-        <a href="#"><li>categoria 3</li></a>
-        <a href="#"><li>categoria 4</li></a>
-        <a href="#"><li>categoria 5</li></a>
-        <a href="#"><li>categoria 6</li></a>
-      </ul>
-    </nav>
-
-    <div class="filter-grid">
-      <div class="inner-wrap">
-        <div class="filter-cell">
-          <select class="form-control">
-            <option value="*">Tipo do produto</option>
-            <option value="square">Eletrodomestico</option>
-            <option value="circular">Limpeza</option>
-          </select>
-        </div>
-        <div class="filter-cell">
-          <select class="form-control" disabled="true">
-            <option>Preço</option>
-          </select>
-        </div>
-        <div class="filter-cell">
-          <select class="form-control" disabled="true">
-            <option>Marca</option>
-          </select>
-        </div>
-      </div>
-    </div>
   </div>
 
   <div class="inner-wrap content-wrap" id="productList">
