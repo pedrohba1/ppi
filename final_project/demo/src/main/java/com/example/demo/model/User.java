@@ -35,9 +35,8 @@ public class User {
     @Column(name = "phoneNum", unique = true)
     private String phoneNum;
 
-    @Column(name = "walletAddress", unique = true)
+    @Column(name = "walletAddress", unique = true, nullable = false)
     private String walletAddress;
-
 
 
 //    @Column(name = "product_list", unique = true)
