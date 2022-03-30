@@ -41,7 +41,6 @@ public class ProductController {
             throw new UserException("user does not exist");
         }
         product.setUser(optionalUser.get());
-        product.setProductOwnerId(optionalUser.get().getId());
 
         return ResponseEntity.status(HttpStatus.CREATED).body(productService.save(product));
     }
