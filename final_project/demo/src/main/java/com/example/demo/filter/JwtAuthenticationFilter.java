@@ -42,12 +42,19 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
             throw new RuntimeException(e);
         }
     }
+
+
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication auth) throws IOException, ServletException {
         String token = JWT.create()
-                .withSubject(((UserDetailsImpl) auth.getPrincipal()).getUsername())
+                .withSubject(((UserDetailsImpl) auth.getPrincipal()).getId().toString())
                 .withExpiresAt(new Date(System.currentTimeMillis() + AuthConfigConstants.EXPIRATION_TIME))
                 .sign(Algorithm.HMAC512(AuthConfigConstants.SECRET.getBytes()));
-        response.addHeader(AuthConfigConstants.HEADER_STRING, AuthConfigConstants.TOKEN_PREFIX + token);
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write(
+                "{\"" + AuthConfigConstants.HEADER_STRING + "\":\"" + AuthConfigConstants.TOKEN_PREFIX+token + "\"}"
+        );
+
     }
 }

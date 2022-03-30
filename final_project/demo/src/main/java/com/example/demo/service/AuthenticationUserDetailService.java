@@ -24,7 +24,7 @@ public class AuthenticationUserDetailService implements UserDetailsService {
             throw new UsernameNotFoundException(username);
         }
 
-        log.info("user logged. {}, password: {}", user.getUsername(), user.getPassword());
+        log.info("user logged. {}", user.getUsername());
         return UserDetailsImpl.build(user);
     }
 }
