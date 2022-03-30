@@ -28,7 +28,7 @@
         </div>
 
         <div class="right dFlex">
-          <router-link to="./meusprodutos">MEUS PRODUTOS</router-link>
+          <router-link to="/addproduto">ADICIONAR PRODUTOS</router-link>
         </div>
       </div>
     </nav>

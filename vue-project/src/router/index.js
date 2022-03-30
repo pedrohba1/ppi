@@ -5,7 +5,6 @@ import LoginView from "../views/LoginView.vue";
 import SignupView from "../views/SignupView.vue";
 import AddProductView from "../views/AddProductView.vue";
 import CartView from "../views/CartView.vue";
-import MyProducts from "../views/MyProducts.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,14 +26,10 @@ const router = createRouter({
     },
     {
       path: "/addproduto",
-      name: "Add product",
+      name: "AddProduct",
       component: AddProductView,
     },
-    {
-      path: "/meusprodutos",
-      name: "Meus produtos",
-      component: MyProducts,
-    },
+
     {
       path: "/cadastro",
       name: "cadastro",

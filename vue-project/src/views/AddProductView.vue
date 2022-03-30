@@ -28,7 +28,7 @@
         </div>
 
         <div class="right dFlex">
-          <router-link to="./meusprodutos">MEUS PRODUTOS</router-link>
+          <router-link to="/addproduto">ADICIONAR PRODUTOS</router-link>
         </div>
       </div>
     </nav>
@@ -41,57 +41,50 @@
 
     <form action="" method="" class="input-content">
       <div class="select select_quantity">
-        <p id="cript_qtn">Qual o nome do produto?</p>
+        <p>Qual o nome do produto?</p>
         <input
           type="text"
-          id="product_name"
-          name=""
-          value=""
+          id="txtProductName"
+          name="productName"
+          v-model="productName"
           placeholder="Nome"
         />
       </div>
 
-      <div class="select select_cat">
-        <p id="cript_slc">Selecione a categoria do produto</p>
-        <select name="select" id="selected_cripto">
-          <option value="valor1" selected>Categoria</option>
-          <option value="valor2">Categoria</option>
-          <option value="valor3">Categoria</option>
-        </select>
-      </div>
-
-      <div class="select select_cat">
-        <p id="cript_slc">Selecione o tipo do produto</p>
-        <select name="select" id="selected_cripto">
-          <option value="valor1" selected>Tipo</option>
-          <option value="valor2">Tipo</option>
-          <option value="valor3">Tipo</option>
-        </select>
-      </div>
-
       <div class="select select_quantity">
-        <p id="cript_slc">Selecione a imagem do produto</p>
+        <p>Qual o tipo do produto?</p>
         <input
-          type="file"
-          id="product_image"
-          name=""
-          value=""
-          placeholder="Imagem"
+          type="text"
+          id="txtProductType"
+          v-model="productType"
+          name="productType"
+          placeholder="Tipo do produto"
         />
       </div>
 
       <div class="select select_quantity">
-        <p id="cript_qtn">Qual o preço do produto?</p>
+        <p>Imagem produto</p>
+        <input
+          type="text"
+          id="txtProductImage"
+          v-model="productImage"
+          name="productImage"
+          placeholder="URL da imagem do produto"
+        />
+      </div>
+
+      <div class="select select_quantity">
+        <p>Qual o preço do produto?</p>
         <input type="text" class="price_product" placeholder="" />
       </div>
 
       <div class="select select_quantity">
-        <p id="cript_qtn">Insira uma descrição para o produto?</p>
+        <p>Insira uma descrição para o produto</p>
         <input
           type="text"
-          id="product_name"
-          name=""
-          value=""
+          id="txtProductDesc"
+          name="productDesc"
+          v-model="productDesc"
           placeholder="Descrição"
         />
       </div>
@@ -106,7 +99,18 @@
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      productName: "",
+      productType: "",
+      productDesc: "",
+      productImage: "",
+    };
+  },
+};
+</script>
 
 <style>
 .test {

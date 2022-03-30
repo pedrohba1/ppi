@@ -27,7 +27,7 @@
           </div>
         </div>
 
-        <router-link to="./meusprodutos">MEUS PRODUTOS</router-link>
+        <router-link to="/addproduto">ADICIONAR PRODUTOS</router-link>
       </div>
     </nav>
   </div>
@@ -57,6 +57,14 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {};
+  },
+};
+</script>
 
 <style>
 .test {
