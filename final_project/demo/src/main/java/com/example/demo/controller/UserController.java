@@ -30,5 +30,9 @@ public class UserController {
     }
 
 
+    @GetMapping("")
+    public ResponseEntity<Object> find() {
+        return ResponseEntity.status(HttpStatus.CREATED).body(userService.findAll());
+    }
 
 }

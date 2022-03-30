@@ -1,9 +1,12 @@
 package com.example.demo.model;
 
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
+@Setter
 @Table(name = "products")
 public class Product {
     @Id
@@ -29,65 +32,11 @@ public class Product {
     @Column(name = "productOwner")
     private UUID productOwnerId;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "users.id")
+
+
+    @JoinColumn(name = "user_id")
+    @ManyToOne(fetch = FetchType.EAGER, optional = false, targetEntity = User.class)
     private User user;
 
-
-    public UUID getId() {
-        return productId;
-    }
-
-    public void setId(UUID productId) {
-        this.productId = productId;
-    }
-
-    public String getName() {
-        return productName;
-    }
-
-    public void setName(String productName) {
-        this.productName = productName;
-    }
-
-    public String getDescription() {
-        return productDescription;
-    }
-
-    public void setDescription(String productDescription) {
-        this.productDescription = productDescription;
-    }
-
-    public String getCategory() {
-        return productType;
-    }
-
-    public void setCategory(String productType) {
-        this.productType = productType;
-    }
-
-    public String getImage() {
-        return productImage;
-    }
-
-    public void setImage(String productImage) {
-        this.productImage = productImage;
-    }
-
-    public long getPrice() {
-        return productPrice;
-    }
-
-    public void setPrice(long productPrice) {
-        this.productPrice = productPrice;
-    }
-
-    public UUID getUsername() {
-        return productOwnerId;
-    }
-
-    public void setUsername(UUID productOwnerId) {
-        this.productOwnerId = productOwnerId;
-    }
 
 }
