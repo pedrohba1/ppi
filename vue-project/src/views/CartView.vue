@@ -6,10 +6,12 @@
           <router-link to="./"><h2>CLX</h2></router-link>
         </div>
 
-        <div class="item">
-          <p>Ola,</p>
-          <h5>entre com seu email</h5>
-        </div>
+        <router-link to="/login">
+          <div class="item">
+            <p>Olá,</p>
+            <h5>entre com seu email</h5>
+          </div>
+        </router-link>
 
         <div class="searchBox dFlex">
           <div class="box">

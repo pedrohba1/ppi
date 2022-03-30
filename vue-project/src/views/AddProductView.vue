@@ -6,10 +6,12 @@
           <router-link to="./"><h2>CLX</h2></router-link>
         </div>
 
-        <div class="item">
-          <p>Olá,</p>
-          <h5>entre com seu email</h5>
-        </div>
+        <router-link to="/login">
+          <div class="item">
+            <p>Olá,</p>
+            <h5>entre com seu email</h5>
+          </div>
+        </router-link>
 
         <div class="searchBox dFlex">
           <div class="box">
@@ -216,11 +218,11 @@ body {
 .main-addProduct {
   position: fixed;
   width: 720px;
-  height: 80vh;
+  height: 60vh;
   border-radius: 20px;
   left: 50%;
   top: 50%;
-  background-color: white;
+  background-color: #d4d4d4;
   transform: translate(-50%, -50%);
 }
 
@@ -241,6 +243,7 @@ body {
 .input-content {
   padding: 25px;
   color: black;
+  background-color: #d4d4d4;
 }
 .input-content p {
   color: black;

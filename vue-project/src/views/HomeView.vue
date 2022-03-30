@@ -6,10 +6,12 @@
           <router-link to="./"><h2>CLX</h2></router-link>
         </div>
 
-        <div class="item">
-          <p>Olá,</p>
-          <h5>entre com seu email</h5>
-        </div>
+        <router-link to="/login">
+          <div class="item">
+            <p>Olá,</p>
+            <h5>entre com seu email</h5>
+          </div>
+        </router-link>
 
         <div class="searchBox dFlex">
           <div class="box">
@@ -36,15 +38,22 @@
 
   <div class="inner-wrap content-wrap" id="productList">
     <div class="product-grid">
-      <div>
+      <div v-for="product in products" :key="product.id">
         <div class="grid-product square fav">
-          <a href="">
-            <div class="img-name watch">
-              <h4>{{}}</h4>
+          <a :href="`/product/` + product.id">
+            <div class="img-name">
+              <img :src="product.image" alt="" />
+              <h4>{{ product.name }}</h4>
             </div>
           </a>
           <p class="price">
-            R${{}}<button class="add-to-cart js-add-to-cart btnfd">Add</button>
+            R${{ product.price
+            }}<button
+              v-on:click="add()"
+              class="add-to-cart btnfd js-add-to-cart btnfd"
+            >
+              Add
+            </button>
           </p>
           <p></p>
         </div>
@@ -63,21 +72,31 @@
     </div>
   </router-link>
 </template>
-
 <script>
 export default {
   data() {
     return {
       parentMessage: "Parent",
       products: [
-        { name: "tal", description: "tal", image: "tal" },
-        { name: "tal", description: "tal", image: "tal" },
+        {
+          id: "fds",
+          name: "tal",
+          price: "tal",
+          image:
+            "https://multimedia.bbycastatic.ca/multimedia/products/250x250/157/15736/15736356.jpg",
+        },
+        { id: "fds", name: "tal", price: "tal", image: "tal" },
+        { id: "fds", name: "tal", price: "tal", image: "tal" },
+        { id: "fds", name: "tal", price: "tal", image: "tal" },
+        { id: "fds", name: "tal", price: "tal", image: "tal" },
+        { id: "fds", name: "tal", price: "tal", image: "tal" },
+        { id: "fds", name: "tal", price: "tal", image: "tal" },
+        { id: "fds", name: "tal", price: "tal", image: "tal" },
       ],
     };
   },
 };
 </script>
-
 <style>
 .test {
   width: 100%;
@@ -294,7 +313,11 @@ ul li {
 }
 
 .watch {
-  background-image: url(https://multimedia.bbycastatic.ca/multimedia/products/250x250/157/15736/15736356.jpg);
+  overflow: hidden;
+}
+
+.watch img {
+  border-radius: 20px;
 }
 
 .go-to-cart {
