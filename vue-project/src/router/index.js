@@ -1,6 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ProductsView from "../views/ProductsView.vue";
+import LoginView from "../views/LoginView.vue";
+import SignupView from "../views/SignupView.vue";
+import AddProductView from "../views/AddProductView.vue";
+import CartView from "../views/CartView.vue";
+import MyProducts from "../views/MyProducts.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,17 +16,34 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/produtos",
-      name: "products",
+      path: "/produto",
+      name: "produto",
       component: ProductsView,
     },
     {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/AboutView.vue"),
+      path: "/login",
+      name: "login",
+      component: LoginView,
+    },
+    {
+      path: "/addproduto",
+      name: "Add product",
+      component: AddProductView,
+    },
+    {
+      path: "/meusprodutos",
+      name: "Meus produtos",
+      component: MyProducts,
+    },
+    {
+      path: "/cadastro",
+      name: "cadastro",
+      component: SignupView,
+    },
+    {
+      path: "/carrinho",
+      name: "carrinho",
+      component: CartView,
     },
   ],
 });

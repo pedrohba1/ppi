@@ -32,29 +32,35 @@
     </nav>
   </div>
 
-  <div class="product_area" id="productListed">
-    <div class="main_content">
-      <div class="image_container">
-        <img
-          src="https://multimedia.bbycastatic.ca/multimedia/products/250x250/157/15736/15736356.jpg"
-          alt=""
-        />
+  <div class="my_product_area">
+    <section class="main_container" id="productListed">
+      <h1 class="text_gray_400 header_main">Meus produtos</h1>
+
+      <div class="table_titles flex text_gray_400">
+        <h2 class="flex_grow">Produto</h2>
+        <h2 class="fixed_with_vl">Valor do produto</h2>
       </div>
 
-      <div class="info_container">
-        <ul>
-          <li>{{}}</li>
-          <li><b>preço: {{}}</b></li>
-          <li><b>Tipo: {{}}</b></li>
-          <li><b>Categoria: {{}}</b></li>
-          <li><b>Descriçao: {{}}</b></li>
-        </ul>
-      </div>
-    </div>
+      <div>
+        <div class="cart-items flex">
+          <div class="cart-item-image image_size">
+            <img
+              src="https://multimedia.bbycastatic.ca/multimedia/products/250x250/157/15736/15736356.jpg"
+              alt=""
+            />
+          </div>
 
-    <div class="add_to_cart">
-      <span>Adicionar ao carrinho</span>
-    </div>
+          <div class="cart-item-details flex_grow">
+            <div class="cart-item-title">{{}}</div>
+
+            <div class="cart-item-brand">{{}}</div>
+          </div>
+
+          <div class="total-cost fixed_with_vl">R$ {{}}</div>
+        </div>
+        <hr />
+      </div>
+    </section>
   </div>
 </template>
 
@@ -161,83 +167,64 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-.product_area {
+.my_product_area {
   position: absolute;
   background: white;
   width: 1074px;
-  height: 340px;
-  top: 30%;
+  margin-top: 290px;
   left: 50%;
   border-radius: 20px;
   transform: translate(-50%, -50%);
   padding: 20px;
 }
 
-.main_content {
-  width: 100%;
-  height: 300px;
-  float: left;
-}
-
-.image_container {
-  float: left;
-  width: 300px;
-  height: 300px;
-}
-
-.image_container img {
-  width: 100%;
-  height: 100%;
-}
-
-.info_container {
-  float: left;
-}
-
-.info_container ul {
-  max-width: 700px;
-  float: left;
-}
-
-.info_container li {
-  list-style-type: none;
-}
-
-.info_container li:first-of-type {
-  font-size: 2em;
+.text_gray_400 {
+  color: gray;
   font-weight: bold;
 }
 
-.info_container p {
-  word-wrap: break-word;
+.table_titles {
+  padding-bottom: 20px;
 }
 
-.add_to_cart {
-  background-color: #27ae60;
-  width: 250px;
-  height: 60px;
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  color: white;
-  text-align: center;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all ease-out 500ms;
+.table_titles h2 {
+  font-size: 16px;
+  color: black;
 }
 
-.add_to_cart:hover {
-  background-color: green;
+.flex {
+  display: flex;
 }
 
-.add_to_cart span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.flex_grow {
+  flex-grow: 5;
 }
 
-b {
-  color: #000;
+.fixed_with_vl {
+  width: 150px;
+}
+
+.image_size img {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+}
+
+.cart-item-details {
+  margin-left: 25px;
+}
+
+.cart-item-title {
+  font-weight: bold;
+  color: #95a5a6;
+}
+
+.cart-item-brand {
+  color: #bdc3c7;
+}
+
+.total-cost {
+  font-weight: bold;
+  color: #95a5a6;
 }
 </style>
