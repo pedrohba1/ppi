@@ -19,6 +19,11 @@ p, h {
     font-family: 'Aclonica';font-size: 40px;
 }
 
+.middle-container {
+    display: flex;
+     justify-content: center;
+}
+
 .head {
     display: flex;
     justify-content: center;
