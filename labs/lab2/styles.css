@@ -43,11 +43,43 @@ p, h {
 
 }
 
+
+.list-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
 .table-container {
     display: flex;
     justify-content:center
 }
 
+
+.headercss{
+  border: none;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+
+}
+
+.form {
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  color: #fff;
+
+}
 
 
 table {
@@ -70,6 +102,8 @@ table {
     border: 1px solid #ddd;
     padding: .35em;
   }
+  tr:nth-child(even) {background: #444}
+  tr:nth-child(odd) {background: #FFF}
   
   table th,
   table td {
@@ -92,16 +126,6 @@ table {
       font-size: 1.3em;
     }
     
-    table thead {
-      border: none;
-      clip: rect(0 0 0 0);
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      width: 1px;
-    }
     
     table tr {
       border-bottom: 3px solid #ddd;
