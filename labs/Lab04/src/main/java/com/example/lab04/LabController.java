@@ -19,10 +19,10 @@ public class LabController {
     }
 
     @GetMapping(path = "/addDomainObject")
-    public @ResponseBody String addDomainObject(@RequestParam String modelo, @RequestParam String placa) {
+    public @ResponseBody String addDomainObject(@RequestParam String model, @RequestParam String company) {
         Airplane airplane = new Airplane();
-        airplane.setModel(modelo);
-        airplane.setCompany(placa);
-        return airplane.toString();
+        airplane.setModel(model);
+        airplane.setCompany(company);
+        return airplane.toJson();
     }
 }
