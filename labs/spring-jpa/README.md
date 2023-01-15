@@ -31,8 +31,8 @@ PRIMARY KEY (`id`)
 Inicializei meu projeto com o Spring Initializr. 
 
 Rodei o script de sql acima com o comando: 
-`docker exec -i  spring-jpa_db_1 mysql -uroot -prootpassword < /script.sql`
+`docker exec -i  spring-jpa_db_1 mysql -uroot -prootpassword < ./script.sql`
 
-ou esse?
 
-docker exec -i  spring-jpa_db_1 mysql -uroot -prootpassword < ./script.sql
+
+
